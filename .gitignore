@@ -28,3 +28,15 @@ __pycache__/
 # Python virtual env
 venv/
 .env/
+
+# Collaboration inputs and runtime/results belong in sibling workspaces.
+private_inputs/
+worktrees/
+results/
+private_review/
+ANNIE_RATPAC2/
+ratpac-two_sandbox/
+*.tar
+*.tar.gz
+*.sif
+*.simg

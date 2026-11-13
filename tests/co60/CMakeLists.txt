@@ -1,0 +1,13 @@
+cmake_minimum_required(VERSION 3.16)
+project(Co60P0 LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 17)
+find_package(Geant4 REQUIRED)
+include(${Geant4_USE_FILE})
+add_executable(geometry_probe geometry_probe.cc)
+target_include_directories(geometry_probe PRIVATE ../../integration/annie_ratpac)
+target_link_libraries(geometry_probe PRIVATE ${Geant4_LIBRARIES})
+add_executable(geometry_sections geometry_sections.cc)
+target_include_directories(geometry_sections PRIVATE ../../integration/annie_ratpac)
+target_link_libraries(geometry_sections PRIVATE ${Geant4_LIBRARIES})
+enable_testing()
+# Input geometry is intentionally external/private; invocation is documented.
